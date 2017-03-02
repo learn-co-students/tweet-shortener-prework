@@ -8,7 +8,6 @@ def dictionary
     "two" => '2',
     "too" => '2',
     "for" => '4',
-    "For" => '4',
     "four" => '4',
     'be' => 'b',
     'you' => 'u',
@@ -19,9 +18,9 @@ end
 
 def word_substituter(tweet)
   tweet.split.each do |word|
-    if dictionary.keys.include?(word)
+    if dictionary.keys.include?(word.downcase)
     dictionary.keys.map do |key|
-      if key == word
+      if key == word.downcase
         word.replace(dictionary[key])
       end
     end
