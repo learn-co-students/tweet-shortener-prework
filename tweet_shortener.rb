@@ -20,56 +20,78 @@ def dictionary
 end
 
 def word_substituter(tweet)
-
-tweet_array = nil
-swap_array = nil
+  tweet_array = []
+  keys_array = []
+  new_tweet = []
 
 tweet_array = tweet.split(" ")
-swap_array = dictionary.keys
-new_tweet = []
+keys_array = dictionary.keys
+
 
 tweet_array.each do |word|
-  if swap_array.include?(word.downcase)
+
+  if keys_array.include?(word.downcase)
+
     word = dictionary[word.downcase]
 
   else
+
     word
-  end
-  new_tweet << word
 end
 
-new_tweet.join(" ")
+    new_tweet << word
+
 end
+
+
+  new_tweet.join(" ")
+
+end
+
 
 def bulk_tweet_shortener(tweet_array)
 
 tweet_array.each do |tweet|
-  puts word_substituter(tweet)
+
+puts word_substituter(tweet)
+
 end
+
+
+
 end
+
+
 
 def selective_tweet_shortener(tweet)
 
+if tweet.size > 140
 
-if  tweet.size > 140
-  word_substituter(tweet)
+word_substituter(tweet)
+
 else
 
-tweet
+  tweet
+
 end
 
 end
+
 
 def shortened_tweet_truncator(tweet)
 
-short_tweet = selective_tweet_shortener(tweet)
+new_tweet = selective_tweet_shortener(tweet)
 
-if short_tweet.size > 140
+if new_tweet.size > 140
 
-hidden_tweet = short_tweet[0..136] + "..."
+  output = new_tweet[0..136] + "..."
+
+
 
 else
+
   tweet
 end
+
 
 end
