@@ -35,7 +35,7 @@ end
 
 #1. takes in string as an arg
 #2. turn string into an array of strings
-#2a. iterate over every word in tweet
+#2.5 iterate over every word in tweet
 #3. compare array to dictionary.keys
 #4. if there are matches, replace word in tweet with associated value in key in the array
 #5. turn array back intro string
