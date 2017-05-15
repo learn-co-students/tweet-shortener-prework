@@ -47,13 +47,12 @@ def shortened_tweet_truncator(tweet)
   selective_tweet_shortener(tweet) if tweet.length < 140
 end
 
-#need to pass arguments??
 =end
 def shortened_tweet_truncator(tweet)
   selective_tweet_shortener(tweet)
     if tweet.length >= 140
-      tweet[0...137].concat("...") #HOW IN THE WORLD IS THIS 137??? BECAUSE (...) is 3 characters!
+      tweet[0...137].concat("...") #(...) is 3 characters!
     else
-      selective_tweet_shortener(tweet) if tweet.length < 140
+      tweet if tweet.length < 140
   end
 end
