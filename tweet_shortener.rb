@@ -1,19 +1,17 @@
 # Write your code here.
 def dictionary
-  hash = {"hello"=>"hi", "to"=>"2", "two"=>"2", "too"=>"2", "for"=>"4", "four"=>"4", "For"=>"4", "be"=>"b", "you"=>"u", "at"=>"@", "and"=>"&"}
+  hash = {"hello"=>"hi", "to"=>"2", "two"=>"2", "too"=>"2", "for"=>"4", "four"=>"4", "be"=>"b", "you"=>"u", "at"=>"@", "and"=>"&"}
 end
 
 
 def word_substituter(string)
-  string_to_array = string.split
-  string_to_array.each do |element|
-    dictionary.each do |word, substitute|
-      if word == element
-        string_to_array[string_to_array.index(element)].sub!(word, substitute)
-      end
+  string.split.map do |element|
+    if dictionary.keys.include?(element.downcase)
+      element = dictionary[element.downcase]
+    else
+      element
     end
-  end
-  string_to_array.join(" ")
+  end.join(" ")
 end
 
 def bulk_tweet_shortener(array)
@@ -32,7 +30,7 @@ end
 
 def shortened_tweet_truncator(twet)
   if selective_tweet_shortener(twet).length > 140
-    return twet[0..139]
+    return twet[0..136] + "..."
   else
     twet
   end
