@@ -26,7 +26,7 @@ def word_substituter(tweet)
     keys.each do |key|
       answer = key if word.downcase == key
     end
-    answer == nil ? word : wordsToBeSubstituted[answer]
+    answer == nil ? word : dictionary[answer]
   end
 
   new_array.join(" ")
