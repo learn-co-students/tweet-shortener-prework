@@ -22,7 +22,6 @@ def word_substituter(tweet)
       if string.include?(word)
         string_array[index] = abbrev
       end
-      # string_array[index].gsub!(word,dictionary[word]) if string.include?(word)
     end
   end
   string_array.join(' ')
