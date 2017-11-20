@@ -59,4 +59,3 @@ output=tweet
   end
   output
 end
-shortened_tweet_truncator("Yo Dawg la la la over 140 characters ok this is annoying I understand why the test writer got so bored with this. Is this even 140 characters? How am I supposed to know I don't tweet and I don't feel like putting it in word.")
