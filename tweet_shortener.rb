@@ -19,11 +19,14 @@ def word_substituter(tweet)
   word_array = tweet.split
   dictionary_array = dictionary.keys
   word_array.map do |w|
-    dictionary_array.each do |subst|
-      if w == subst
-        w = subst
-      end
+    if dictionary_array.include?(w)
+      w = dictionary[w]
+    else
+      w
     end
-  end
-  binding.pry
+  end.join(" ")
+end
+
+def bulk_tweet_shortener(tweets)
+  tweets.each {|tweet| puts word_substituter(tweet)}
 end
