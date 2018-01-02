@@ -19,8 +19,8 @@ def word_substituter(tweet)
   word_array = tweet.split
   dictionary_array = dictionary.keys
   word_array.map do |w|
-    if dictionary_array.include?(w)
-      w = dictionary[w]
+    if dictionary_array.include?(w.downcase)
+      w = dictionary[w.downcase]
     else
       w
     end
@@ -29,4 +29,8 @@ end
 
 def bulk_tweet_shortener(tweets)
   tweets.each {|tweet| puts word_substituter(tweet)}
+end
+
+def selective_tweet_shortener
+
 end
