@@ -1,1 +1,117 @@
-# Write your code here.
+require 'pry'
+
+def dictionary
+  dict={"hello" => 'hi',
+    "to" => '2',
+    "two" => '2',
+    "too" => '2',
+    "for" => '4',
+    "four" => '4',
+    'be' => 'b',
+    'you' => 'u',
+    "at" => "@",
+    "and" => "&"
+  }
+end
+
+
+def word_substituter (tweet_string)
+  tweet_array = tweet_string.split(" ")
+  dictionary.each{|key, val|
+    tweet_array.each_with_index {|word, i|
+      if word.downcase == key
+        tweet_array[i]=val
+      end
+    }
+  }
+  tweet_array.join(" ")
+end
+
+def bulk_tweet_shortener (array_of_tweets)
+  array_of_tweets.each{|x|
+    puts word_substituter(x)
+  }
+end
+
+def selective_tweet_shortener(tweet)
+  tweet_s = tweet.to_s
+  if tweet_s.length > 140
+    puts word_substituter(tweet_s)
+  else
+    puts tweet_s
+  end
+end
+#
+# def selective_tweet_shortener  (array_of_tweets)
+#   binding.pry
+#   array_of_tweets.each{|tweet|
+#     binding.pry
+#     if tweet.length > 140
+#       puts word_substituter(tweet)
+#     else
+#       puts tweet
+#     end
+#   }
+# end
+
+def shortened_tweet_truncator(x)
+    if x.length > 140
+      subst =  word_substituter(x)
+      if subst.length >140
+        puts subst[0..137] + "..."
+      else
+        puts subst
+      end
+    else
+      puts x
+    end
+end
+
+# binding.pry
+#
+#
+#
+#   let(:tweet_one)   {"Hey guys, can anyone teach me how to be cool? I really want to be the best at everything, you know what I mean? Tweeting is super fun you guys!!!!"}
+#   let(:tweet_two)   {"OMG you guys, you won't believe how sweet my kitten is. My kitten is like super cuddly and too cute to be believed right?"}
+#   let(:tweet_three) {"GUISEEEEE this is so fun! I'm tweeting for you guys and this tweet is SOOOO long it's gonna be way more than you would think twitter can handle, so shorten it up you know what I mean? I just can never tell how long to keep typing!"}
+#   let(:tweet_four)  {"New game. Middle aged tweet followed by #youngPeopleHashTag Example: Gotta get my colonoscopy and mammogram soon. Prevention is key! #swag"}
+#   let(:tweet_five)  {"I'm running out of example tweets for you guys, which is weird, because I'm a writer and this is just writing and I tweet all day. For real, you guys. For real."}
+#
+#   let(:tweet_one_short)   {"Hey guys, can anyone teach me how 2 b cool? I really want 2 b the best @ everything, u know what I mean? Tweeting is super fun u guys!!!!"}
+#   let(:tweet_two_short)   {"OMG u guys, u won't believe how sweet my kitten is. My kitten is like super cuddly & 2 cute 2 b believed right?"}
+#   let(:tweet_three_short) {"GUISEEEEE this is so fun! I'm tweeting 4 u guys & this tweet is SOOOO long it's gonna b way more than u would think twitter can handle, so shorten it up u know what I mean? I just can never tell how long 2 keep typing!"}
+#   let(:tweet_four_short)  {"New game. Middle aged tweet followed by #youngPeopleHashTag Example: Gotta get my colonoscopy & mammogram soon. Prevention is key! #swag"}
+#   let(:tweet_five_short)  {"I'm running out of example tweets 4 u guys, which is weird, because I'm a writer & this is just writing & I tweet all day. 4 real, u guys. 4 real."}
+#
+#   let(:tweets) {[tweet_one, tweet_two, tweet_three, tweet_four, tweet_five]}
+#
+#   # Question 3
+#   describe '#selective_tweet_shortener' do
+#     it "shortens tweets that are more than 140 characters" do
+#       tweet_one_length = tweet_one.length
+#       tweet_three_length = tweet_three.length
+#       tweet_five_length = tweet_five.length
+#       expect(selective_tweet_shortener(tweet_one).length).to be < tweet_one_length
+#       expect(selective_tweet_shortener(tweet_three).length).to be < tweet_three_length
+#       expect(selective_tweet_shortener(tweet_five).length).to be < tweet_five_length
+#     end
+#
+#     it "does not shorten tweets that are less than 130 characters" do
+#       expect(selective_tweet_shortener(tweet_two).length).to be == tweet_two.length
+#       expect(selective_tweet_shortener(tweet_four).length).to be == tweet_four.length
+#     end
+#
+#   end
+#
+#   # Question 4
+#   describe '#shortened_tweet_truncator' do
+#     it 'truncates tweets over 140 characters after shortening' do
+#       expect(shortened_tweet_truncator(tweet_three).length).to be == 140
+#     end
+#
+#     it 'does not shorten tweets shorter than 140 characters.' do
+#       expect(shortened_tweet_truncator(tweet_one_short).length).to be == tweet_one_short.length
+#     end
+#   end
+#
+# end
