@@ -1,6 +1,7 @@
 # Write your code here.
 def dictionary
 dictionary = {
+  "hello" => "hi",
   "too" => "2",
   "to" => "2",
   "two" =>"2",
