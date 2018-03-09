@@ -1,4 +1,5 @@
-@dictionary = {
+def word_substituter(string)
+dictionary = {
 'hello' => 'hi',
 'to' => '2',
 'two' => '2', 
@@ -10,12 +11,11 @@
 'at' => '@', 
 'and' => '&'}
 
-def word_substituter(string)
   all_words = string.split(' ')
   shortened = [] 
   all_words.each do |word|
-    if @dictionary.keys.include?(word)
-      shortened << @dictionary[word] 
+    if dictionary.keys.include?(word.downcase)
+      shortened << dictionary[word.downcase] 
     else 
       shortened << word 
     end 
@@ -23,9 +23,24 @@ def word_substituter(string)
   shortened.join(' ') 
 end 
 
-def selective_tweet_shortner(tweet)
+def bulk_tweet_shortener(array)
+  array.each do |tweet|
+    puts "#{word_substituter(tweet)}"
+  end 
+end 
+
+def selective_tweet_shortener(tweet)
    if tweet.length > 140
     return word_substituter(tweet)
   end 
   tweet
 end 
+
+def shortened_tweet_truncator(tweet)
+  short = selective_tweet_shortener(tweet) 
+  if short.length > 140
+    return short[0..135] + " ..."
+  end 
+  short 
+end 
+
