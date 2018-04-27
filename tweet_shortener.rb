@@ -6,6 +6,8 @@ def dictionary
     "to" => "2",
     "two" => "2",
     "too" => "2",
+    "for" => "4",
+    "four" => "4",
     "be" => "b",
     "you" => "u",
     "at" => "@",
@@ -15,25 +17,13 @@ end
 
 
 def word_substituter(tweet)
-  dic = {
-    "hello" => "hi",
-    "to" => "2",
-    "two" => "2",
-    "too" => "2",
-    "be" => "b",
-    "for" => "4",
-    "four" => "4",
-    "you" => "u",
-    "at" => "@",
-    "and" => "&"
-  }
-  dic_keys = dic.keys
+  dic_keys = dictionary.keys
   new_tweet = tweet.split(" ")
 
   new_tweet.each_with_index do |word, index|
     dic_keys.each do |key|
       if word.casecmp(key) == 0
-        new_tweet[index] = dic[key]
+        new_tweet[index] = dictionary[key]
       end
     end
 
@@ -51,10 +41,20 @@ end
 
 def selective_tweet_shortener(tweet)
   if tweet.length > 140
-    binding.pry
-    puts word_substituter(tweet)
+    word_substituter(tweet)
   else
-    puts tweet
+    tweet
   end
+end
 
+
+def shortened_tweet_truncator(tweet)
+
+  if tweet.length > 140
+    if word_substituter(tweet).length > 140
+      word_substituter(tweet)[0..136] << "..."
+    end
+  else
+    tweet
+  end
 end
