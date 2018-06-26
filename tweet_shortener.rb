@@ -20,5 +20,5 @@ def tweet_shortener(string)
     end
     index+=1
   end
-  new.join(" ")
+  puts new.join(" ")
 end
