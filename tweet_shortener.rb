@@ -1,4 +1,3 @@
-# Write your code here.
 def tweet_shortener(string)
   words = string.split(" ")
   dictionary = {
@@ -14,11 +13,13 @@ def tweet_shortener(string)
   while index < words.length
     x = words[index]
     if dictionary.values.flatten.include?(x) 
-    new.push((dictionary.key(x).to_s))
+    use= ""
+    dictionary.each{|key,value| use = key if value.include?(x)}
+    new.push(use)
     else
     new.push(x)
     end
     index+=1
   end
-  puts new.join(" ")
+  new.join(" ")
 end
