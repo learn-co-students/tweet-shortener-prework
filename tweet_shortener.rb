@@ -7,6 +7,7 @@ def tweet_shortener(string)
     :b => "be",
     :u => "you",
     :"@" => "at",
+    :and => "&"
   }
   new = []
   index = 0
