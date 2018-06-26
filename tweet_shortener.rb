@@ -24,3 +24,9 @@ def word_substituter(string)
   end
   new.join(" ")
 end
+
+def bulk_tweet_shortener(array)
+  array.map{|x| word_substituter(x)}
+  puts array
+end
+  
