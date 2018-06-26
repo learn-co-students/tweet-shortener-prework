@@ -1,4 +1,4 @@
-def tweet_shortener(string)
+def word_substituter(string)
   words = string.split(" ")
   dictionary = {
     :hi => "hello",
