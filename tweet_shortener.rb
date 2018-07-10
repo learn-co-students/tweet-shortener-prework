@@ -1,5 +1,4 @@
 # Write your code here.
-require'pry'
 
 def dictionary 
 substitutes = { 
@@ -21,5 +20,9 @@ end
 def word_substituter(tweet)
   tweet.split(" ").map do |word|
     if dictionary[word]   
-
+      dictionary[word]
+    else
+      word
+    end
+  end.join(" ")
 end
