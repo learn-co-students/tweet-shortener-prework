@@ -16,7 +16,12 @@ end
 
 def word_substituter(tweet)
   tweet.split.map do |word|
-    dictionary(word)
+    punctuation = word.index(/\W+/)   # This checks for non-letter characters, e.g. commas, which may be at the end of words in our split array
+    if punctuation                    # So we can replace words but maintain the punctuation
+      dictionary(word[0...punctuation]) + word[punctuation..word.length]
+    else 
+      dictionary(word)
+    end
   end.join(" ")
 end  
 
