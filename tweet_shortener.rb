@@ -16,11 +16,11 @@ def word_substituter(tweet)
     if d_h_keys.include?(tword)
   
        tweet_words[tweet_words.index(tword)] = dictionary_hash[tword]
-       tweet_words
+       new_tweet_words = tweet_words
     end
-     tweet_words.join(" ")
+     new_tweet = new_tweet_words.join(" ")
   end
-  tweet_words
+  new_tweet 
   
 end
 
