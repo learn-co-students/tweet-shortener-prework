@@ -18,7 +18,7 @@ def word_substituter(tweet)
     if dictionary.keys.include?(tword)
     #At this point, dictionary.keys does indeed yield an array of the keys in the hash in the above dictionary method.
        tweet_words[tweet_words.index(tword)] = dictionary.keys[tword]
-       
+
     end 
   end
   new_tweet = new_tweet_words.join(" ")

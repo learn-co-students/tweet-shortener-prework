@@ -1,0 +1,23 @@
+
+[1mFrom:[0m /home/OGonzalezNYC/tweet-shortener-prework/tweet_shortener.rb @ line 11 Object#word_substituter:
+
+    [1;34m10[0m: [32mdef[0m [1;34mword_substituter[0m(tweet)
+ => [1;34m11[0m:    binding.pry
+    [1;34m12[0m: 
+    [1;34m13[0m:   tweet_words = tweet.split([31m[1;31m"[0m[31m [1;31m"[0m[31m[0m) 
+    [1;34m14[0m:    [1;34m# tweet_words is an array consisting of  |tword|'s[0m
+    [1;34m15[0m:    [1;34m#So, it's all working properly at least through here.[0m
+    [1;34m16[0m:   
+    [1;34m17[0m:   new_tweet_words = tweet_words.collect [32mdo[0m |tword|
+    [1;34m18[0m:     [32mif[0m dictionary.keys.include?(tword)
+    [1;34m19[0m:     [1;34m#At this point, dictionary.keys does indeed yield an array of the keys in the hash in the above dictionary method.[0m
+    [1;34m20[0m:        tweet_words[tweet_words.index(tword)] = dictionary.keys[tword]
+    [1;34m21[0m: binding.pry 
+    [1;34m22[0m:     [32mend[0m 
+    [1;34m23[0m:   [32mend[0m
+    [1;34m24[0m:   new_tweet = new_tweet_words.join([31m[1;31m"[0m[31m [1;31m"[0m[31m[0m)
+    [1;34m25[0m:   
+    [1;34m26[0m:   [1;34m#But new_tweet is nothing but a long string of empty space (as is new_tweet_words.join(" ")).  So that means that the collect method that I'm running is turning tweet_words, an array of the original words, into new_tweet_words, an array of empty strings...  [0m
+    [1;34m27[0m:   [1;34m#AND I just ran learn after having temporarily set new_tweet equal to simply new_tweet_words.join, without the (" "); and it returned  ""  , a COMPLETELY empty string that didn't even contain a single space. So, having returned the code back to its pre-tweaked state, I imagine that each original word is being converted into  ""  .[0m
+    [1;34m28[0m: [32mend[0m
+
