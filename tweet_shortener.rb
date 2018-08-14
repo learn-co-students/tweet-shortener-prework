@@ -21,7 +21,7 @@ def word_substituter(tweet)
   end
   new_tweet = new_tweet_words.join(" ")
   
-  #But new_tweet is nothing but a long string of empty spaces (as is new_tweet_words.join(" ")).  So that means that the collect method that I'm running is turning tweet_words, an array of the original words, into new_tweet_words, an array of empty words.
+  #But new_tweet is nothing but a long string of empty spaces (as is new_tweet_words.join(" ")).  So that means that the collect method that I'm running is turning tweet_words, an array of the original words, into new_tweet_words, an array of empty spaces.
 end
 
 
