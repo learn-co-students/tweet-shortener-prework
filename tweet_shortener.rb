@@ -11,9 +11,9 @@ def word_substituter(tweet)
   d_h_keys = dictionary_hash.keys 
   # d_h_keys is an array consisting of |dhk|'s
   tweet_words = tweet.split(" ") 
-   binding.pry
+   # tweet_words is an array consisting of  |tword|'s
    #So, it's all working properly at least through here.
-  # tweet_words is an array consisting of  |tword|'s
+  
   new_tweet_words = tweet_words.collect do |tword|
     if d_h_keys.include?(tword)
        tweet_words[tweet_words.index(tword)] = dictionary_hash[tword]
