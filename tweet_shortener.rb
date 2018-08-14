@@ -10,17 +10,12 @@ def word_substituter(tweet)
   dictionary_hash = dictionary
   d_h_keys = dictionary_hash.keys 
   # d_h_keys is an array consisting of |dhk|'s
-  
   tweet_words = tweet.split(" ") 
-   
   # tweet_words is an array consisting of  |tword|'s
-  
   new_tweet_words = tweet_words.collect do |tword|
-    
     if d_h_keys.include?(tword)
         tweet_words[tweet_words.index(tword)] = dictionary_hash[tword]
     end 
-    
   end
   new_tweet = new_tweet_words.join(" ")
  
