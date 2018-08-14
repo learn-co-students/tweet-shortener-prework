@@ -10,11 +10,14 @@ end
 def word_substituter(tweet)
   
   tweet_words = tweet.split(" ") 
+  
    # tweet_words is an array consisting of  |tword|'s
    #So, it's all working properly at least through here.
+   
   new_tweet_words = tweet_words.collect do |tword|
+
     #At this point new_tweet_words returns nil.
-  
+
     if dictionary.keys.include?(tword)
     #At this point, dictionary.keys does indeed yield an array of the keys in the hash in the above dictionary method.
        tweet_words[tweet_words.index(tword)] = dictionary.keys[tword]
@@ -24,6 +27,8 @@ def word_substituter(tweet)
     new_tweet_words
     
   end
+
+  binding.pry 
 
   new_tweet = new_tweet_words.join(" ")
    #But new_tweet is nothing but a long string of empty space (as is new_tweet_words.join(" ")).  So that means that the collect method that I'm running is turning tweet_words, an array of the original words, into new_tweet_words, an array of empty strings...  
