@@ -28,14 +28,20 @@ def word_substituter(tweet)
     
   end
    # At this point, dictionary, dictionary.keys, and tweet all seem to work fine. 
+   
+   # But, while tweet returns a string of 30 words:
+   
+   # "Hey guys, can anyone teach me how to be cool? I really want to be the best at everything, you know what I mean? Tweeting is super fun you guys!!!!"
   
-  # But and tweet.split(" ") and tweet_words both return a partial array followed by an actual array.  The partial array contains 19 words, including 2 "to"s, 2 "be"s, 1 "at", and no closing bracket: 
+  # tweet.split(" ") and tweet_words both return a partial array followed by an actual array.  The partial array contains 19 words, including 2 "to"s, 2 "be"s, 1 "at", and no closing bracket: 
   
   #  ["Hey", "guys,", "can", "anyone", "teach", "me", "how", "to", "be", "cool?", "I", "really", "want", "to", "be", "the", "best", "at", "everything,",
   
-  # The actual array contains 18 words, 2 of which are "you": 
+  # And the actual array only contains 18 words, 2 of which are "you": 
   
   #  ["Hey", "guys,", "can", "anyone", "teach", "me", "how", "you", "know", "what", "I", "mean?", "Tweeting", "is", "super", "fun", "you", "guys!!!!"]
+  
+  # SO
    
    # new_tweet_words returns an array of 18 nils: 
    
