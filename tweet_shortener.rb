@@ -18,6 +18,7 @@ def word_substituter(tweet)
     end 
   end
   new_tweet = new_tweet_words.join(" ")
+  # It would seem that new_tweet_words is an empty spaces.
 end
 
 
