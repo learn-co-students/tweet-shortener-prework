@@ -27,24 +27,29 @@ def word_substituter(tweet)
     new_tweet_words
     
   end
-   #At this point, dictionary, dictionary.keys, and tweet all seem to work fine. 
-   # tweet.split(" ") returns 1 array of 18 words, 2 of which are "you".
-  # But tweet_words returns a partial array followed by an actual array.  The partial array contains 19 words, including 2 "to"s, 2 "be"s, 1 "at", and no closing bracket: 
+   # At this point, dictionary, dictionary.keys, and tweet all seem to work fine. 
+  
+  # But and tweet.split(" ") and tweet_words both return a partial array followed by an actual array.  The partial array contains 19 words, including 2 "to"s, 2 "be"s, 1 "at", and no closing bracket: 
   
   #  ["Hey", "guys,", "can", "anyone", "teach", "me", "how", "to", "be", "cool?", "I", "really", "want", "to", "be", "the", "best", "at", "everything,",
   
   # The actual array contains 18 words, 2 of which are "you": 
   
   #  ["Hey", "guys,", "can", "anyone", "teach", "me", "how", "you", "know", "what", "I", "mean?", "Tweeting", "is", "super", "fun", "you", "guys!!!!"]
-  
-  # And tweet.split(" ") returns 
    
-   #And new_tweet_words returns an array of nils, along the lines of [nil, nil, nil]   . I think there are 18 nils.  
+   # new_tweet_words returns an array of 18 nils: 
+   
+   # [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil]
    
    binding.pry
   new_tweet = new_tweet_words.join(" ")
-   #But new_tweet is nothing but a long string of empty space (as is new_tweet_words.join(" ")).  So that means that the collect method that I'm running is turning tweet_words, an array of the original words, into new_tweet_words, an array of empty strings...  
-  #AND I just ran learn after having temporarily set new_tweet equal to simply new_tweet_words.join, without the (" "); and it returned  ""  , a COMPLETELY empty string that didn't even contain a single space. So, having returned the code back to its pre-tweaked state, I imagine that each original word is being converted into  ""  .
+   #But new_tweet and new_tweet_words.join(" ") both return a long string of empty space (I'm guessing 18 spaces):
+   
+   # "                  "
+   
+   #So that means that the collect method that I'm running is turning tweet_words, an array of the original words, into new_tweet_words, an array of empty strings... 
+   
+  # (And) I just ran learn after having temporarily set new_tweet equal to simply new_tweet_words.join, without any (" "); and it returned  ""  , a COMPLETELY empty string that didn't even contain a single space.
 end
 
 
