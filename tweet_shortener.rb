@@ -33,9 +33,11 @@ def word_substituter(tweet)
   
   #  ["Hey", "guys,", "can", "anyone", "teach", "me", "how", "to", "be", "cool?", "I", "really", "want", "to", "be", "the", "best", "at", "everything,",
   
-  # The second array contains 18 words, 2 of which are "you": 
+  # The actual array contains 18 words, 2 of which are "you": 
   
-  #
+  #  ["Hey", "guys,", "can", "anyone", "teach", "me", "how", "you", "know", "what", "I", "mean?", "Tweeting", "is", "super", "fun", "you", "guys!!!!"]
+  
+  # And tweet.split(" ") returns 
    
    #And new_tweet_words returns an array of nils, along the lines of [nil, nil, nil]   . I think there are 18 nils.  
    
