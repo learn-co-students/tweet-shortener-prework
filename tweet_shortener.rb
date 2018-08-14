@@ -21,7 +21,9 @@ def word_substituter(tweet)
   end
   new_tweet = new_tweet_words.join(" ")
   
-  #But new_tweet is nothing but a long string of empty space (as is new_tweet_words.join(" ")).  So that means that the collect method that I'm running is turning tweet_words, an array of the original words, into new_tweet_words, an array of empty strings...  AND I just ran learn after temporarily tweaking new_tweet, setting it equal to simply new_tweet_words.join, without the (" ").  And it returned  ""  , a COMPLETELY empty string that didn't even contain a single space.
+  #But new_tweet is nothing but a long string of empty space (as is new_tweet_words.join(" ")).  So that means that the collect method that I'm running is turning tweet_words, an array of the original words, into new_tweet_words, an array of empty strings...  
+  #AND I just ran learn after having temporarily set new_tweet equal to simply new_tweet_words.join, without the (" ").  And it returned  ""  , a COMPLETELY empty string that didn't even contain a single space.  
+  #So I initially infer that each original word is being converted into ""  .
 end
 
 
