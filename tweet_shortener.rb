@@ -8,7 +8,8 @@ end
 
 
 def word_substituter(tweet)
-   
+  
+    
  
   tweet_words = tweet.split(" ") 
    # tweet_words is an array consisting of  |tword|'s
@@ -20,6 +21,7 @@ def word_substituter(tweet)
        tweet_words[tweet_words.index(tword)] = dictionary.keys[tword]
 
     end 
+    new_tweet_words
   end
   new_tweet = new_tweet_words.join(" ")
   
