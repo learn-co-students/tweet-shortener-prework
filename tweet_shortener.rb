@@ -29,11 +29,18 @@ def word_substituter(tweet)
   end
    # At this point, dictionary, dictionary.keys, and tweet all seem to work fine. 
    
-   # But, while tweet returns a string of 30 words:
+   
+   # dictionary.keys returns an array of the keys from the dictionary hash:
+   
+   # [:hello, :to, :two, :too, :for, :four, :be, :you, :at, :and]
+   # AT LEAST PART OF THE PROBLEM IS THAT I'M NOT REMOVING THE : FROM EACH KEY.
+   
+   # But that's not the only problem.
+   # tweet returns a string of 30 words:
    
    # "Hey guys, can anyone teach me how to be cool? I really want to be the best at everything, you know what I mean? Tweeting is super fun you guys!!!!"
   
-  # tweet.split(" ") and tweet_words both return a partial array followed by an actual array.  The partial array contains 19 words, including 2 "to"s, 2 "be"s, 1 "at", and no closing bracket: 
+  # BUT tweet.split(" ") and tweet_words both return an unclosed array followed by an closed array.  The partial array contains 19 words, including 2 "to"s, 2 "be"s, 1 "at", and no closing bracket: 
   
   #  ["Hey", "guys,", "can", "anyone", "teach", "me", "how", "to", "be", "cool?", "I", "really", "want", "to", "be", "the", "best", "at", "everything,",
   
@@ -57,7 +64,6 @@ def word_substituter(tweet)
    
   # (And) I just ran learn after having temporarily set new_tweet equal to simply new_tweet_words.join, without any (" "); and it returned  ""  , a COMPLETELY empty string that didn't even contain a single space.
 end
-
 
 
 
