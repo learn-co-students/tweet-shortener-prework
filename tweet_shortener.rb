@@ -17,13 +17,11 @@ def word_substituter(tweet)
   new_tweet_words = tweet_words.collect do |tword|
     if d_h_keys.include?(tword)
        tweet_words[tweet_words.index(tword)] = dictionary_hash[tword]
-   
     end 
-    tweet_words
-    
   end
   new_tweet = new_tweet_words.join(" ")
-  # It would seem that new_tweet_words is an empty spaces.
+  
+  # But new_tweet is nothing but a long string of empty spaces.
 end
 
 
