@@ -9,7 +9,7 @@ def word_substituter(tweet)
   tweet_words.collect do |tword|
     if dictionary.keys.include?(tword)
        tweet_words[tweet_words.index(tword)] = dictionary[tword]
-    end 
+    end
   end
   tweet_words.join(" ")
 end
