@@ -9,10 +9,19 @@ def word_substituter(tweet)
   new_tweet_words = tweet_words.collect do |tword|
     if dictionary.keys.include?(tword)
        tweet_words[tweet_words.index(tword)] = dictionary.keys[dictionary.keys.index(tword)]
+# tweet  ,   tweet_words   ,   and    dictionary.keys   return the appropriate values.   
     end 
     new_tweet_words
   end
+  # new_tweet_words returns an array of 30 nils: 
+  
+  # [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil]
+  
+   
   new_tweet = new_tweet_words.join(" ")
+  # new_tweet returns a long, empty string:
+  # "                             "
+
 end
 
 
