@@ -27,7 +27,7 @@ def word_substituter(tweet)
     new_tweet_words
     
   end
-<<<<<<< HEAD
+
    # At this point, dictionary, dictionary.keys, and tweet all seem to work fine. 
    
    
@@ -54,7 +54,7 @@ def word_substituter(tweet)
    # new_tweet_words returns an array of 18 nils: 
    
    # [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil]
-=======
+
    #At this point, dictionary, dictionary.keys, and tweet all seem to work fine. 
    # tweet.split(" ") returns 1 array of 18 words, 2 of which are "you".
   # But tweet_words returns a partial array followed by an actual array.  The partial array contains 19 words, including 2 "to"s, 2 "be"s, 1 "at", and no closing bracket: 
@@ -66,7 +66,7 @@ def word_substituter(tweet)
   #
    
    #And new_tweet_words returns an array of nils, along the lines of [nil, nil, nil]   . I think there are 18 nils.  
->>>>>>> 2035d49ec2324ee8b013de3ecb7bbadc662e18d7
+
    
    binding.pry
   new_tweet = new_tweet_words.join(" ")
