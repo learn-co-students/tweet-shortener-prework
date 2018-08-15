@@ -1,7 +1,7 @@
 require 'pry'
 
 def dictionary
-  {"hello" => "hi", "to" => "2" => "two" => "2", "too" => "2", "for" => "4", "four" => "4", "be" => "b", "you" => "u", "at" => "@", "and" => "&"}
+  {"hello" => "hi", "to" => "2", "two" => "2", "too" => "2", "for" => "4", "four" => "4", "be" => "b", "you" => "u", "at" => "@", "and" => "&"}
 end 
 
 
@@ -9,25 +9,21 @@ end
 
 def word_substituter(tweet)
   
-  tweet_words = tweet.split(" ") 
-  
-   # tweet_words is an array consisting of  |tword|'s
-   #So, it's all working properly at least through here.
+  tweet_words = tweet.split(" ") # tweet_words is an array consisting of  |tword|'s
    
   new_tweet_words = tweet_words.collect do |tword|
 
-    #At this point new_tweet_words returns nil.
-
     if dictionary.keys.include?(tword)
-    #At this point, dictionary.keys does indeed yield an array of the keys in the hash in the above dictionary method.
+    
        tweet_words[tweet_words.index(tword)] = dictionary.keys[tword]
-   #At this point new_tweet_words returns nil.
+   
     end 
   
     new_tweet_words
+    # dictionary   ,  dictionary.keys   ,   tweet  ,   and  tweet_words   are all returning what they should be returning.  But new_tweet_words is returning   nil  
     
   end
-
+binding.pry 
    # At this point, dictionary, dictionary.keys, and tweet all seem to work fine. 
    
    
