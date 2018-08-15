@@ -12,19 +12,29 @@ def word_substituter(tweet)
   tweet_words = tweet.split(" ") # tweet_words is an array consisting of  |tword|'s
    
   new_tweet_words = tweet_words.collect do |tword|
-
+ # binding.pry     dictionary   ,  dictionary.keys   ,   tweet  ,   and  tweet_words   are all returning what they should be returning.  But new_tweet_words is returning   nil 
+ 
     if dictionary.keys.include?(tword)
-    
-       tweet_words[tweet_words.index(tword)] = dictionary.keys[tword]
+      
+   # binding.pry     dictionary   ,  dictionary.keys   ,   tweet  ,   and  tweet_words   are all returning what they should be returning.  But new_tweet_words is returning   nil 
    
+       tweet_words[tweet_words.index(tword)] = dictionary.keys[tword]
+       
+   # binding.pry won't work here.
     end 
-  binding.pry 
+  # binding.pry     dictionary   ,  dictionary.keys   ,   tweet  ,   and  tweet_words   are all returning what they should be returning.  But new_tweet_words is returning   nil 
+  
     new_tweet_words
-    # dictionary   ,  dictionary.keys   ,   tweet  ,   and  tweet_words   are all returning what they should be returning.  But new_tweet_words is returning   nil  
-  # binding.pry  
+    
+    # binding.pry     dictionary   ,  dictionary.keys   ,   tweet  ,   and  tweet_words   are all returning what they should be returning.  But new_tweet_words is returning   nil 
+    
+    
+    
   end
 # binding.pry won't work here.
+
   new_tweet = new_tweet_words.join(" ")
+  
  # binding.pry won't work here. 
 end
 
