@@ -10,7 +10,7 @@ def word_substituter(tweet)
     if dictionary.keys.include?(tword)
        dictionary_value = dictionary[tword]
        tweet_words[tweet_words.index(tword)] = dictionary_value
-# tweet, tweet_words, and dictionary.keys return the right values.
+# tweet, tweet_words, and dictionary.keys all work fine.
     end 
     new_tweet_words
   end
