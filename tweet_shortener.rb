@@ -18,11 +18,9 @@ def word_substituter(tweet)
 # [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil]
   
   new_tweet = new_tweet_words.join(" ")
-  
-# new_tweet returns a long, empty string, presumably the length of 30 spaces:
-# "                             "
+   
+# new_tweet returns a long, empty string, presumably the length of 30 spaces: "                             "
 end
-
 
 
 
