@@ -13,13 +13,14 @@ def word_substituter(tweet)
     end 
     new_tweet_words
   end
-  # new_tweet_words returns an array of 30 nils (one for each word in the tweet): 
+# new_tweet_words returns an array of 30 nils (one for each word in the tweet): 
   
-  # [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil]
+# [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil]
   
-   
   new_tweet = new_tweet_words.join(" ")
-  # new_tweet returns a long, empty string:
+  
+  # new_tweet returns a long, empty string, presumably the length of 30 spaces:
+  
   # "                             "
 
 end
