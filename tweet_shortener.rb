@@ -6,17 +6,18 @@ end
 
 def word_substituter(tweet)
   tweet_words = tweet.split(" ") 
-  new_tweet_words = tweet_words.collect do |tword|
+  tweet_words.collect do |tword|
     if dictionary.keys.include?(tword)
        dictionary_value = dictionary[tword]
        tweet_words[tweet_words.index(tword)] = dictionary_value
 # tweet, tweet_words, and dictionary.keys all work fine.
     end 
-    new_tweet_words
+    
   end
-# new_tweet_words returns an array of 30 nils (one for each word in the tweet): [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil]
   
-  new_tweet = new_tweet_words.join(" ")
+
+  
+  tweet_words.join(" ")
    
 # new_tweet returns an empty string, presumably 30 spaces long:     "                             "
 end
