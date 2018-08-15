@@ -23,7 +23,7 @@ def word_substituter(tweet)
     # dictionary   ,  dictionary.keys   ,   tweet  ,   and  tweet_words   are all returning what they should be returning.  But new_tweet_words is returning   nil  
     
   end
-binding.pry 
+
    # At this point, dictionary, dictionary.keys, and tweet all seem to work fine. 
    
    
@@ -66,6 +66,8 @@ binding.pry
    
    
   new_tweet = new_tweet_words.join(" ")
+  
+  
    #But new_tweet and new_tweet_words.join(" ") both return a long string of empty space (I'm guessing 18 spaces):
    
    # "                  "
