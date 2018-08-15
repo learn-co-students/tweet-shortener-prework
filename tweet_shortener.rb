@@ -1,14 +1,14 @@
 require 'pry'
 
 def dictionary
-  {"hello" => "hi", "to" => "2", "two" => "2", "too" => "2", "for" => "4", "For" => "4", "four" => "4", "be" => "b", "you" => "u", "at" => "@", "and" => "&"}
+  {"hello" => "hi", "to" => "2", "two" => "2", "too" => "2", "for" => "4", "four" => "4", "be" => "b", "you" => "u", "at" => "@", "and" => "&"}
 end 
 
 def word_substituter(tweet)
   tweet_words = tweet.split(" ")
   tweet_words.collect do |tword|
-    if dictionary.keys.include?(tword)
-       tweet_words[tweet_words.index(tword)] = dictionary[tword]
+    if dictionary.keys.include?(tword.downcase)
+       tweet_words[tweet_words.index(tword)] = dictionary[tword.downcase]
     end
   end
   tweet_words.join(" ")
