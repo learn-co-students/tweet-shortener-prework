@@ -10,16 +10,15 @@ def word_substituter(tweet)
     if dictionary.keys.include?(tword)
        dictionary_value = dictionary[tword]
        tweet_words[tweet_words.index(tword)] = dictionary_value
-# tweet  ,   tweet_words   ,   and    dictionary.keys   return the appropriate values.   
+# tweet, tweet_words, and dictionary.keys return the right values.
     end 
     new_tweet_words
   end
-# new_tweet_words returns an array of 30 nils (one for each word in the tweet): 
-# [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil]
+# new_tweet_words returns an array of 30 nils (one for each word in the tweet): [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil]
   
   new_tweet = new_tweet_words.join(" ")
    
-# new_tweet returns a long, empty string, presumably the length of 30 spaces: "                             "
+# new_tweet returns an empty string, presumably 30 spaces long:     "                             "
 end
 
 
