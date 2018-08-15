@@ -9,16 +9,9 @@ def word_substituter(tweet)
   tweet_words.collect do |tword|
     if dictionary.keys.include?(tword)
        tweet_words[tweet_words.index(tword)] = dictionary[tword]
-# tweet, tweet_words, and dictionary.keys all work fine.
     end 
-    
   end
-  
-
-  
   tweet_words.join(" ")
-   
-# new_tweet returns an empty string, presumably 30 spaces long:     "                             "
 end
 
 
