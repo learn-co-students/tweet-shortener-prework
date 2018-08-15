@@ -28,7 +28,7 @@ def word_substituter(tweet)
     
     # binding.pry     dictionary   ,  dictionary.keys   ,   tweet  ,   and  tweet_words   are all returning what they should be returning.  But new_tweet_words is returning   nil 
     
-    
+    # word_substituter(tweet) returns all the code for the whole method
     
   end
 # binding.pry won't work here.
