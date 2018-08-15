@@ -7,7 +7,7 @@ end
 def word_substituter(tweet)
   tweet_words = tweet.split(" ") 
   new_tweet_words = tweet_words.collect do |tword|
-    binding.pry 
+    
     if dictionary.keys.include?(tword)
        tweet_words[tweet_words.index(tword)] = dictionary[tword]
 # I need to find out how to get a hash value based  on its key.     
