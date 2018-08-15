@@ -13,7 +13,7 @@ def word_substituter(tweet)
     end 
     new_tweet_words
   end
-  # new_tweet_words returns an array of 30 nils: 
+  # new_tweet_words returns an array of 30 nils (one for each word in the tweet): 
   
   # [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil]
   
