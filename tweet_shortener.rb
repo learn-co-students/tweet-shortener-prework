@@ -21,7 +21,7 @@ def word_substituter(tweet)
   new_tweet = new_tweet_words.join(" ")
   
 # new_tweet returns a long, empty string, presumably the length of 30 spaces:
-  # "                             "
+# "                             "
 end
 
 
