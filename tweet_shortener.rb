@@ -9,8 +9,8 @@ def word_substituter(tweet)
   new_tweet_words = tweet_words.collect do |tword|
     
     if dictionary.keys.include?(tword)
-       tweet_words[tweet_words.index(tword)] = dictionary[tword]
-       
+       dictionary_value = dictionary[tword]
+       tweet_words[tweet_words.index(tword)] = dictionary_value
 # tweet  ,   tweet_words   ,   and    dictionary.keys   return the appropriate values.   
     end 
     new_tweet_words
