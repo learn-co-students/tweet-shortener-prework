@@ -8,7 +8,7 @@ def word_substituter(tweet)
   tweet_words = tweet.split(" ") 
   new_tweet_words = tweet_words.collect do |tword|
     if dictionary.keys.include?(tword)
-       tweet_words[tweet_words.index(tword)] = dictionary.keys[dictionary.keys.index(tword)]
+       tweet_words[tweet_words.index(tword)] = dictionary.values(tword)
 # tweet  ,   tweet_words   ,   and    dictionary.keys   return the appropriate values.   
     end 
     new_tweet_words
