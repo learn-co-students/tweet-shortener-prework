@@ -1,3 +1,6 @@
+# place binding.pry right above 
+# new_tweet = new_tweet_words.join(" ")
+
 require 'pry'
 
 def dictionary

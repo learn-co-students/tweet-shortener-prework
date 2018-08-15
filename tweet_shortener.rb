@@ -68,7 +68,7 @@ def word_substituter(tweet)
    #And new_tweet_words returns an array of nils, along the lines of [nil, nil, nil]   . I think there are 18 nils.  
 
    
-   binding.pry
+   
   new_tweet = new_tweet_words.join(" ")
    #But new_tweet and new_tweet_words.join(" ") both return a long string of empty space (I'm guessing 18 spaces):
    
