@@ -24,7 +24,7 @@ def word_substituter(tweet)
 
 end
 
-def bulk_tweet_shortener(tweets)
+def bulk_tweet_shortener(tweets) 
     short = dictionary.keys
 
     tweets.each do |tweet|
@@ -38,6 +38,10 @@ def selective_tweet_shortener(tweet)
 end
 
 def shortened_tweet_truncator(tweet)
-    tweet[0..139]
+    if tweet.length < 140
+        tweet
+    else
+        tweet[0..136] + "..."
+    end
 
 end
