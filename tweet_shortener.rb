@@ -1,6 +1,6 @@
 # Write your code here.
 
-def word_substituter(tweet)
+def dictionary
   dictionary = 
   {
     'hello' => 'hi',
@@ -14,13 +14,19 @@ def word_substituter(tweet)
     'at' => '@',
     'and' => '&',
   }
+  
+end
+
+
+def word_substituter(tweet)
+  
   convert_array = tweet.split
   # puts convert_array.inspect
   
   new_array = []
   convert_array.each do |tweet|
-    if dictionary.include?(tweet)
-      new_array.push(dictionary[tweet])
+    if dictionary.include?(tweet.downcase)
+      new_array.push(dictionary[tweet.downcase])
     else
       new_array.push(tweet)
     end
@@ -75,38 +81,26 @@ def shortened_tweet_truncator(tweet)
 end
 
 def bulk_tweet_shortener(tweets)
-  dictionary = 
-  {
-    'hello' => 'hi',
-    'to' => '2',
-    'two' => '2',
-    'too' => '2',
-    "for" => '4',
-    'four' => '4',
-    'be' => 'b',
-    'you' => 'u',
-    'at' => '@',
-    'and' => '&',
-  }
-  new_arr = []
   tweets.each do |tweet|
-    tweet_arr = tweet.split
-    tweet_arr.each do |word|
-      if dictionary.include?(word)
-        new_arr.push(dictionary[word])
-      else
-        new_arr.push(word)
-      end
-    end
+    #tweet_arr = tweet.split
+   # tweet_arr.each do |word|
+     # if dictionary.include?(word)
+        #new_arr.push(dictionary[word])
+      #else
+        #new_arr.push(word)
+     # end
+    #end
+  #end
+  #return  new_arr.join(' ')
+  puts word_substituter(tweet)
   end
-  puts new_arr.join(' ')
 end
 
         
   
 
 
-puts bulk_tweet_shortener(["Hey guys, can anyone teach me how to be cool? I really want to be the best at everything, you know what I mean? Tweeting is super fun you guys!!!!","OMG you guys, you won't believe how sweet my kitten is. My kitten is like super cuddly and too cute to be believed right?"
+bulk_tweet_shortener(["Hey guys, can anyone teach me how to be cool? I really want to be the best at everything, you know what I mean? Tweeting is super fun you guys!!!!","OMG you guys, you won't believe how sweet my kitten is. My kitten is like super cuddly and too cute to be believed right?"
 
 ])
 
