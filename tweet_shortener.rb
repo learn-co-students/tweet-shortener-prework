@@ -35,8 +35,8 @@ else
   return string
 end
   if stringshort.size >140
-    firstpart=stringshort[0...140]
-    secondpart=stringshort[140...stringshort.size]
+    firstpart=stringshort[0...134]
+    secondpart=stringshort[134...stringshort.size]
     last_space_position= (firstpart.size-1)-(firstpart.reverse.index(" "))
     part1, part2 = firstpart.slice!(0...(last_space_position+1)), firstpart
     new_tweet_first_part=part1+"(...)"
