@@ -6,15 +6,13 @@ def dictionary
 end 
 
 def word_substituter(tweet)
-  symbol_sub_array = dictionary.keys
-  string_sub_array = symbol_sub_array.collect { |x| x.to_s }
-  tweet_array = tweet.split(" ")
-  tweet_array.each do |word|
-    if word.include?("hello", "be", "you", "at", "and", "for", "four", "to", "two", "too")
-      tweet_array[word] = "z"
-      
+  tweet.split.collect do |word|
+    binding.pry
+    if dictionary.keys.include?(word.downcase)
+      word = dictionary[word.downcase]
+    else
+      word
     end 
-  end
+  end.join(" ")
 end
-
 
