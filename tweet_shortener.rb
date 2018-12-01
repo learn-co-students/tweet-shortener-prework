@@ -1,12 +1,14 @@
 # Write your code here.
-def dictionary(words)
-  words-to-be-substituted ={
+require "pry"
+def dictionary
+  dictionary ={
     hello:"hi",
     to:"2",
     two:"2",
     too:"2",
     for:"4",
     four:"4",
+    For:"4",
     be:"b",
     you:"u",
     at:"@",
@@ -15,26 +17,39 @@ def dictionary(words)
 end
 
 def word_substituter(string)
-  words-to-be-substituted.each do |words|
-  string.split(",")
-  string.keys
-  string.each do |word|
-    if word == words
-      word = words.value
-  string.join
+  string.split.collect do |word|
+    if dictionary.keys.include?(word.to_sym)
+    # binding.pry
+    word = dictionary[word.to_sym]
+    else
+    word
+    end
+end.join(" ")
 end
 
 def bulk_tweet_shortener(array)
-  array.each do word_substituter |word|
-    puts array
-    puts bulk_tweet_shortener
+  array.each do |tweet|
+  puts word_substituter(tweet)
+  # binding.pry
+  end
+  array.join(" ")
+  end
+
+def selective_tweet_shortener(array)
+  # binding.pry
+  if array.length > 140
+  word_substituter(array)
+  else
+    return array
+end
 end
 
-def selective_tweet_shortener(tweet)
-  if tweet.length > 140
-    tweet.each do bulk_tweet_shortener |word|
-end
-
-def shortened_tweet_truncator(tweet)
-  puts tweet[0..140]
+def shortened_tweet_truncator(tweets)
+  if tweets.length > 140
+  tweets = word_substituter(tweets)
+  end
+    if tweets.length >140
+    tweets = tweets[1..140]
+    end
+    tweets
 end
