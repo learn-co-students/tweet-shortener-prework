@@ -3,7 +3,7 @@ require 'pry'
 
 def dictionary
   dictionary = {
-    "hello" => 'hi',
+    "hello" => "hi",
     "two" => "2",
     "too" => "2",
     "to" => "2",
@@ -35,5 +35,25 @@ def bulk_tweet_shortener(tweets)
     short_guy = word_substituter(x)
     shortened_tweet << short_guy
     end
-  puts shortened_tweet
+  shortened_tweet.each do |x|
+    puts x
+  end
+end
+
+def selective_tweet_shortener(tweet)
+  if tweet.length >= 141
+    word_substituter(tweet)
+  else
+    tweet
+  end
+end
+
+
+def shortened_tweet_truncator(tweet)
+  short_boi = word_substituter(tweet)
+  if short_boi.length >= 139
+    short_boi[78..1000].chomp
+  else
+    short_boi
+  end
 end
