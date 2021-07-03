@@ -4,16 +4,23 @@ end
 
 def word_substituter(tweet)
   tweet_words = tweet.split(" ")
-  new_tweet_words = tweet_words.collect do |tword|
+  tweet_words.collect do |tword|
     if dictionary.keys.include?(tword.downcase)
        tweet_words[tweet_words.index(tword)] = dictionary[tword.downcase]
-    else tword 
     end
   end
-  new_tweet_words.join(" ")
+  tweet_words.join(" ")
 end
 
 
+<<<<<<< HEAD
+=======
+
+Well the expected return tweet contained two mentions of "4"  that my method was returning as "Four" (with a capital F).  I realized that while the # dictionary hash keys included "four" with a lower-case f, they did not include "Four" with a capital F.  So I added that key to the hash in my #dictionary method.  That's how I got my # bulk_tweet_shortener method to pass the test
+
+
+ 
+>>>>>>> 8a27b21b2b61baa49080687f7b8b2dec8ad1231e
 def bulk_tweet_shortener(array_of_tweets)
   array_of_tweets.each do |tweet|
     puts word_substituter(tweet)
